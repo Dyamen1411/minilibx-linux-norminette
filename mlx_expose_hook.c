@@ -1,22 +1,20 @@
-/*
-** mlx_expose_hook.c for MiniLibX in 
-** 
-** Made by Charlie Root
-** Login   <ol@epitech.net>
-** 
-** Started on  Thu Aug  3 11:49:06 2000 Charlie Root
-** Last update Fri Feb 23 17:07:42 2001 Charlie Root
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mlx_expose_hook.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dyamen <dyamen@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/04 01:07:49 by Charlie roo       #+#    #+#             */
+/*   Updated: 2023/09/04 01:09:03 by dyamen           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "mlx_int.h"
 
-#include	"mlx_int.h"
-
-
-
-
-int		mlx_expose_hook(t_win_list *win,int (*funct)(),void *param)
+int	mlx_expose_hook(t_win_list *win, int (*funct)(), void *param)
 {
-  win->hooks[Expose].hook = funct;
-  win->hooks[Expose].param = param;
-  win->hooks[Expose].mask = ExposureMask;
+	win->hooks[Expose].hook = funct;
+	win->hooks[Expose].param = param;
+	win->hooks[Expose].mask = ExposureMask;
 }
