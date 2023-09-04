@@ -6,7 +6,7 @@
 /*   By: dyamen <dyamen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 02:43:32 by Charlie Roo       #+#    #+#             */
-/*   Updated: 2023/09/04 02:46:38 by dyamen           ###   ########.fr       */
+/*   Updated: 2023/09/04 02:56:13 by dyamen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # include <sys/shm.h>
 # include <X11/extensions/XShm.h>
 # include <X11/XKBlib.h>
-/* #include	<X11/xpm.h> */
+// # include <X11/xpm.h>
 
 # define MLX_TYPE_SHM_PIXMAP 3
 # define MLX_TYPE_SHM 2
@@ -122,7 +122,7 @@ int				mlx_int_rgb_conversion(void);
 int				mlx_int_deal_shm(void);
 void			*mlx_int_new_xshm_image(void);
 char			**mlx_int_str_to_wordtab(void);
-void			*mlx_new_image(void);
+void			*mlx_new_image(t_xvar *xvar, int width, int height, int format);
 int				shm_att_pb(void);
 int				mlx_int_get_visual(t_xvar *xvar);
 int				mlx_int_set_win_event_mask(t_xvar *xvar);
