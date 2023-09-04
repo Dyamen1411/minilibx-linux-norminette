@@ -6,7 +6,7 @@
 /*   By: dyamen <dyamen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 02:43:32 by Charlie Roo       #+#    #+#             */
-/*   Updated: 2023/09/04 03:52:57 by dyamen           ###   ########.fr       */
+/*   Updated: 2023/09/04 04:34:04 by dyamen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ struct	s_col_name
 typedef struct s_event_list
 {
 	int		mask;
-	int		(*hook)();
+	int		(*hook)(void *);
 	void	*param;
 }	t_event_list;
 
