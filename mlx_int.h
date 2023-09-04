@@ -6,7 +6,7 @@
 /*   By: dyamen <dyamen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 02:43:32 by Charlie Roo       #+#    #+#             */
-/*   Updated: 2023/09/04 03:31:44 by dyamen           ###   ########.fr       */
+/*   Updated: 2023/09/04 03:52:57 by dyamen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,18 +112,20 @@ typedef struct s_xvar
 	int			end_loop;
 }	t_xvar;
 
-int				mlx_int_do_nothing(void);
-int				mlx_get_color_value(void);
-int				mlx_int_get_good_color(void);
+int				mlx_int_do_nothing(void *param);
+int				mlx_get_color_value(t_xvar *xvar, int color);
+int				mlx_int_get_good_color(t_xvar *xvar, int color);
 int				mlx_int_find_in_pcm(void);
-int				mlx_int_anti_resize_win(void);
-int				mlx_int_wait_first_expose(void);
-int				mlx_int_rgb_conversion(void);
-int				mlx_int_deal_shm(void);
-void			*mlx_int_new_xshm_image(void);
-char			**mlx_int_str_to_wordtab(void);
+int				mlx_int_anti_resize_win(t_xvar *xvar, Window window,
+					int size_x, int size_y);
+int				mlx_int_wait_first_expose(t_xvar *xvat, Window window);
+int				mlx_int_rgb_conversion(t_xvar *xvar);
+int				mlx_int_deal_shm(t_xvar *xvar);
+void			*mlx_int_new_xshm_image(t_xvar *xvar,
+					int width, int height, int format);
+char			**mlx_int_str_to_wordtab(char *str);
 void			*mlx_new_image(t_xvar *xvar, int width, int height, int format);
-int				shm_att_pb(void);
+int				shm_att_pb(Display *d, XErrorEvent *ev);
 int				mlx_int_get_visual(t_xvar *xvar);
 int				mlx_int_set_win_event_mask(t_xvar *xvar);
 int				mlx_int_str_str_cote(char *str, char *find, int len);
